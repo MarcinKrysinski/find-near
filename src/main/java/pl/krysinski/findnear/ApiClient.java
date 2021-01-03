@@ -43,7 +43,6 @@ public class ApiClient {
         System.out.println("Lista: " + placeDtoList);
     }
 
-
     public ModelMapper modelMapper() {
 
         ModelMapper modelMapper = new ModelMapper();
