@@ -3,6 +3,7 @@ package pl.krysinski.findnear.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import pl.krysinski.findnear.model.PlaceDTO;
 import pl.krysinski.findnear.service.ApiService;
 
@@ -27,5 +28,10 @@ public class SpotController {
         apiService.setType(type);
         List<PlaceDTO> placesList = apiService.getPlacesListFromApi();
         return placesList;
+    }
+
+    @GetMapping
+    private ModelAndView getMap(){
+        return apiService.getMap();
     }
 }

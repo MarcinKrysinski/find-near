@@ -8,6 +8,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
 import pl.krysinski.findnear.model.PlaceDTO;
 import pl.krysinski.findnear.model.api.PlaceUrl;
 import pl.krysinski.findnear.model.api.Result;
@@ -69,6 +70,12 @@ public class ApiService {
         return modelMapper;
     }
 
+    public ModelAndView getMap(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("map");
+        return modelAndView;
+    }
+
     private URI getApiUrl() {
         URI uri = null;
         try {
@@ -89,6 +96,8 @@ public class ApiService {
         String encodeStr = str.replace("%2C%2C",",");
         return encodeStr;
     }
+
+
 
 
 }
