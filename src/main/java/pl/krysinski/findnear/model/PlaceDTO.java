@@ -1,7 +1,5 @@
 package pl.krysinski.findnear.model;
 
-import pl.krysinski.findnear.model.api.Photo;
-import java.util.List;
 
 public class PlaceDTO {
 
@@ -17,9 +15,21 @@ public class PlaceDTO {
 
     private Integer priceLevel;
 
-    private Integer rating;
+    private Double rating;
 
     private Integer userRatingsTotal;
+
+    public PlaceDTO(String name, String formattedAddress, Double rating, Double lat, Double lng, Boolean openNow) {
+        this.name = name;
+        this.formattedAddress = formattedAddress;
+        this.rating = rating;
+        this.lat = lat;
+        this.lng = lng;
+        this.openNow = openNow;
+    }
+
+    public PlaceDTO() {
+    }
 
     public String getName() {
         return name;
@@ -70,11 +80,11 @@ public class PlaceDTO {
         this.priceLevel = priceLevel;
     }
 
-    public Integer getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(Integer rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 

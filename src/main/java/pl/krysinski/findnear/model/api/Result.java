@@ -51,7 +51,7 @@ public class Result {
     @JsonProperty("price_level")
     private Integer priceLevel;
     @JsonProperty("rating")
-    private Integer rating;
+    private Double rating;
     @JsonProperty("reference")
     private String reference;
     @JsonProperty("types")
@@ -162,12 +162,12 @@ public class Result {
     }
 
     @JsonProperty("rating")
-    public Integer getRating() {
+    public Double getRating() {
         return rating;
     }
 
     @JsonProperty("rating")
-    public void setRating(Integer rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 
