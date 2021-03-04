@@ -41,3 +41,12 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
+
+function test(){
+   let request = $.ajax({
+        url: 'http://localhost:8080/places?' + $.param({lat: 54.372158, lng: 18.638306, type: 'kebab'}),
+        method: 'POST',
+    });
+
+   console.log(request);
+}
